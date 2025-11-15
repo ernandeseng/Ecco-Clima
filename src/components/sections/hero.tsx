@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ButtonColorful } from '../ui/button-colorful';
 import { TextRotate } from '../ui/text-rotate';
-import { LayoutGroup, motion } from 'motion/react';
+import { LayoutGroup, motion } from "framer-motion";
 
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
