@@ -36,15 +36,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="https://i.imgur.com/4PCGe4W.png"
-              alt="Ecco Clima Logo"
-              width={180}
-              height={40}
-              className="filter invert brightness-0 dark:invert-0 dark:brightness-100 transition-all"
-              style={{ filter: "brightness(0) invert(1)" }}
-            />
+          <Link href="/" className="flex items-center text-2xl font-bold text-foreground">
+            Ecco Clima
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
@@ -73,14 +66,8 @@ export default function Header() {
               <SheetContent side="right" className="bg-background w-full">
                 <div className="flex flex-col h-full p-4">
                   <div className="flex justify-between items-center mb-8">
-                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Image
-                        src="https://i.imgur.com/4PCGe4W.png"
-                        alt="Ecco Clima Logo"
-                        width={180}
-                        height={40}
-                        style={{ filter: "brightness(0) invert(1)" }}
-                      />
+                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-foreground">
+                      Ecco Clima
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                       <X className="h-6 w-6" />
