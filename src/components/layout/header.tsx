@@ -12,9 +12,9 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Sobre", href: "#about" },
+  { name: "Home", href: "/" },
   { name: "Climatização", href: "#services" },
-  { name: "Equipamentos", href: "#services" },
+  { name: "Equipamentos", href: "#clients" },
   { name: "Contato", href: "#contact" },
 ];
 
