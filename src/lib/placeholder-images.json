@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Woman relaxing on a modern sofa in a well-lit living room, with an air conditioner visible in the background.",
-      "imageUrl": "https://images.unsplash.com/photo-1693646335971-4ebeb589eb31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMHJlbGF4aW5nJTIwc29mYXxlbnwwfHx8fDE3NjMyMjQwNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "woman relaxing sofa"
+      "description": "Close-up of a modern air conditioner unit mounted on a wall.",
+      "imageUrl": "https://i.imgur.com/DbzXgmH.jpeg",
+      "imageHint": "air conditioner"
     },
     {
       "id": "benefits-illustration",
