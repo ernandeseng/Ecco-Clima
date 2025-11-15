@@ -55,8 +55,8 @@ export default function BenefitsSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className={animationClass('delay-0')}>
-            <h2 className="text-4xl md:text-5xl font-bold font-headline text-slate-900">Benefícios exclusivos</h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <h2 className="text-slate-900">Benefícios exclusivos</h2>
+            <p className="mt-4 text-gray-600">
               Quais as vantagens dos serviços da Ecco Clima?
             </p>
             <ul className="mt-8 space-y-4">
@@ -68,7 +68,7 @@ export default function BenefitsSection() {
               ))}
             </ul>
             <div className={`mt-10 ${animationClass('delay-200')}`}>
-                <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform">
+                <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
                   <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
                     <Phone className="mr-2 h-5 w-5" />
                     Fale com um especialista

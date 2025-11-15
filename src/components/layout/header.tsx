@@ -45,13 +45,13 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group font-body"
               >
                 {link.name}
                 <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
-            <Button asChild variant="accent" size="sm">
+            <Button asChild variant="accent" size="sm" className="font-headline font-semibold tracking-[0.5px] uppercase">
               <Link href="#contact">Agendar Visita</Link>
             </Button>
           </nav>
@@ -78,14 +78,14 @@ export default function Header() {
                       <Link
                         key={link.name}
                         href={link.href}
-                        className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+                        className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors font-body"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {link.name}
                       </Link>
                     ))}
                   </nav>
-                  <Button asChild variant="accent" className="mt-8 w-full" size="lg">
+                  <Button asChild variant="accent" className="mt-8 w-full font-headline font-semibold tracking-[0.5px] uppercase" size="lg">
                     <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Agendar Visita</Link>
                   </Button>
                 </div>

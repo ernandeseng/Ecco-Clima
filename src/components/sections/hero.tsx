@@ -51,7 +51,7 @@ export default function HeroSection() {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
@@ -70,16 +70,16 @@ export default function HeroSection() {
               data-ai-hint={logoImage.imageHint}
             />
           )}
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter">
+          <h1 className="text-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
             Ecco Clima
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary font-light mt-2">
+          <p className="font-headline font-semibold text-2xl md:text-4xl text-primary mt-2">
             Climatização
           </p>
-          <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl text-foreground/80">
+          <p className="mt-6 max-w-xl mx-auto">
             Conheça nossos serviços de climatização em São Paulo e interior.
           </p>
-          <Button asChild size="lg" variant="accent" className="mt-8 animate-pulse">
+          <Button asChild size="lg" variant="accent" className="mt-8 animate-pulse font-headline font-semibold tracking-[0.5px] uppercase">
             <Link href="#contact">AGENDAR VISITA TÉCNICA</Link>
           </Button>
         </div>

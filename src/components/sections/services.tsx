@@ -59,8 +59,8 @@ export default function ServicesSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-700 to-primary opacity-50"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-16 ${animationClass('delay-0')}`}>
-          <h2 className="text-4xl md:text-5xl font-bold font-headline">Serviços da Ecco Clima</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-primary-foreground/80">
+          <h2>Serviços da Ecco Clima</h2>
+          <p className="mt-4 max-w-3xl mx-auto text-primary-foreground/80">
             Precisa climatizar sua casa ou prédio? Da instalação de ar-condicionado à climatização geral de ambientes, nossos serviços são feitos com qualidade por Engenheiros e Técnicos.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function ServicesSection() {
                   <AirVent className="w-8 h-8" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl font-bold">Serviços de Climatização</CardTitle>
+                  <h3 as="h3">Serviços de Climatização</h3>
                   <p className="text-muted-foreground text-base">Instalação, limpeza e manutenção</p>
                 </div>
               </CardHeader>
@@ -97,7 +97,7 @@ export default function ServicesSection() {
                   <Building2 className="w-8 h-8" />
                 </div>
                 <div>
-                  <CardTitle className="text-2xl font-bold">Projetos e Infraestrutura</CardTitle>
+                  <h3 as="h3">Projetos e Infraestrutura</h3>
                   <p className="text-muted-foreground text-base">Soluções completas e personalizadas</p>
                 </div>
               </CardHeader>
@@ -116,7 +116,7 @@ export default function ServicesSection() {
         </div>
 
         <div className={`text-center mt-16 ${animationClass('delay-600')}`}>
-          <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform">
+          <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
             <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
               <Phone className="mr-2 h-5 w-5" />
               Solicite um Orçamento

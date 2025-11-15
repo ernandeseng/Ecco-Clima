@@ -37,32 +37,32 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-1 gap-12 lg:gap-16 items-center">
           <div className={`${animationClass('delay-0')} text-center`}>
-            <h2 className="text-4xl md:text-5xl font-bold font-headline">Contato da Ecco Clima</h2>
-            <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
+            <h2>Contato da Ecco Clima</h2>
+            <p className="mt-4 text-primary-foreground/80 max-w-3xl mx-auto">
               Somos uma empresa que zela pela segurança e qualidade, do orçamento ao pós-venda. Cuide do seu ambiente com quem sabe cuidar da climatização de ponta a ponta.
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
               <div className="text-xl font-semibold bg-accent text-accent-foreground p-4 rounded-lg">
-                <Button asChild variant="accent" size="lg" className="w-full hover:scale-105 transition-transform">
+                <Button asChild variant="accent" size="lg" className="w-full hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
                   <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
                     <Phone className="mr-2 h-5 w-5" />
                     Solicite uma visita técnica gratuita!
                   </a>
                 </Button>
               </div>
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-4 text-small">
                 <Phone className="w-6 h-6 text-accent"/>
                 <div>
-                  <a href="tel:1126408455" className="hover:underline">(11) 2640-8455</a> | <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer" className="hover:underline">(11) 97684-4276</a>
+                  <a href="tel:1126408455" className="hover:underline font-body">(11) 2640-8455</a> | <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer" className="hover:underline font-body">(11) 97684-4276</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-4 text-small">
                 <Mail className="w-6 h-6 text-accent"/>
-                <a href="mailto:contato@eccoclima.com" className="hover:underline">contato@eccoclima.com</a>
+                <a href="mailto:contato@eccoclima.com" className="hover:underline font-body">contato@eccoclima.com</a>
               </div>
-               <div className="flex items-center justify-center gap-4">
+               <div className="flex items-center justify-center gap-4 text-small">
                 <MapPin className="w-6 h-6 text-accent"/>
-                <span>São Paulo e Interior</span>
+                <span className="font-body">São Paulo e Interior</span>
               </div>
             </div>
           </div>

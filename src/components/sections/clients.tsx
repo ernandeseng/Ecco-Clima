@@ -45,8 +45,8 @@ export default function ClientsSection() {
     <section id="clients" ref={sectionRef} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 ${animationClass}`}>
-          <h2 className="text-4xl md:text-5xl font-bold font-headline">Nossos Clientes</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <h2>Nossos Clientes</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
             Confiança e parceria com grandes nomes do mercado.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function ClientsSection() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex justify-center items-center h-20 bg-secondary/50 rounded-lg p-4">
-                <span className="text-muted-foreground font-semibold text-center">{logo}</span>
+                <span className="text-muted-foreground font-semibold text-center font-body text-base">{logo}</span>
               </div>
             </div>
           ))}
