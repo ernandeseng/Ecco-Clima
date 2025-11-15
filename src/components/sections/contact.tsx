@@ -42,18 +42,20 @@ export default function ContactSection() {
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
               <ButtonColorful label="Solicite uma visita técnica gratuita!" className="text-sm px-4 sm:px-8"/>
-              <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
-                <div>
-                  <a href="tel:1126408455" className="hover:underline font-body">(11) 2640-8455</a> | <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer" className="hover:underline font-body">(11) 97684-4276</a>
+              <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-accent"/>
+                <div className="flex flex-col sm:flex-row items-center sm:gap-2">
+                  <a href="tel:1126408455" className="hover:underline font-body">(11) 2640-8455</a>
+                  <span className="hidden sm:inline">|</span>
+                  <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer" className="hover:underline font-body">(11) 97684-4276</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
+              <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent"/>
                 <a href="mailto:contato@eccoclima.com" className="hover:underline font-body">contato@eccoclima.com</a>
               </div>
-               <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
-                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
+               <div className="flex items-center justify-center gap-2 text-xs sm:text-sm">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-accent"/>
                 <span className="font-body">São Paulo e Interior</span>
               </div>
             </div>
