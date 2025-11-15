@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ButtonColorful } from '../ui/button-colorful';
+import { TextRotate } from '../ui/text-rotate';
+import { LayoutGroup, motion } from 'motion/react';
 
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -72,9 +74,23 @@ export default function HeroSection() {
           <h1 className="text-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
             Ecco Clima
           </h1>
-          <p className="font-headline font-semibold text-2xl md:text-4xl text-primary mt-2">
-            Climatização
-          </p>
+          <LayoutGroup>
+            <motion.div className="font-headline font-semibold text-2xl md:text-3xl text-primary mt-4 flex items-center justify-center gap-2" layout>
+              <span>Sua solução em</span>
+              <TextRotate
+                texts={["Climatização", "Refrigeração", "Conforto"]}
+                mainClassName="text-white px-2 sm:px-3 bg-accent/80 overflow-hidden py-0.5 sm:py-1 justify-center rounded-lg"
+                staggerFrom={"first"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.05}
+                splitLevelClassName="overflow-hidden pb-0.5"
+                transition={{ type: "spring", damping: 20, stiffness: 200 }}
+                rotationInterval={2500}
+              />
+            </motion.div>
+          </LayoutGroup>
           <p className="mt-6 max-w-xl mx-auto">
             Conheça nossos serviços de climatização em São Paulo e interior.
           </p>
