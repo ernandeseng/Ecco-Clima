@@ -51,8 +51,18 @@ export default function BenefitsSection() {
     }`;
   
   return (
-    <section id="about" ref={sectionRef} className="py-20 md:py-28 bg-gray-50 text-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" ref={sectionRef} className="py-20 md:py-28 bg-gray-50 text-gray-800 relative overflow-hidden">
+      {benefitsImage && (
+        <Image
+          src={benefitsImage.imageUrl}
+          alt={benefitsImage.description}
+          width={800}
+          height={800}
+          className="absolute -right-40 -bottom-40 opacity-10 object-cover"
+          data-ai-hint={benefitsImage.imageHint}
+        />
+      )}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className={animationClass('delay-0')}>
             <h2 className="text-slate-900">Benefícios exclusivos</h2>
@@ -71,17 +81,9 @@ export default function BenefitsSection() {
                 <ButtonColorful label="Fale com um especialista" />
             </div>
           </div>
+          {/* A imagem agora é uma marca d'água, então o div da imagem original pode ser removido ou escondido */}
           <div className={`${animationClass('delay-200')} hidden md:block`}>
-            {benefitsImage && (
-              <Image
-                src={benefitsImage.imageUrl}
-                alt={benefitsImage.description}
-                width={600}
-                height={600}
-                className="rounded-lg shadow-2xl object-cover"
-                data-ai-hint={benefitsImage.imageHint}
-              />
-            )}
+            {/* O conteúdo da imagem foi movido para fora da grade principal para atuar como fundo */}
           </div>
         </div>
       </div>

@@ -2,26 +2,52 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { AirVent, Building2, Check, Phone } from "lucide-react";
+import { AirVent, Building2, Check, Phone, Wrench, Sparkles } from "lucide-react";
 import Link from 'next/link';
 import { ButtonColorful } from '../ui/button-colorful';
 
-const services = {
-  climatizacao: [
-    "Sistema de ar-condicionado Split",
-    "Sistema de climatização Multisplit",
-    "Sistema de ar-condicionado VRV/VRF",
-    "Limpeza e Higienização de sistemas",
-    "Manutenção Preventiva e Corretiva",
-  ],
-  projetos: [
-    "Projeto de climatização personalizado",
-    "Infraestrutura completa de climatização",
-    "Sistemas de Exaustão e Renovação de Ar",
-    "Sistemas de Escadas Pressurizadas",
-    "Laudos e Anotação de Responsabilidade Técnica (ART)",
-  ],
-};
+const services = [
+    { 
+        icon: AirVent, 
+        title: "Instalação de Ar Condicionado", 
+        description: "Equipes especializadas para todos os modelos.",
+        items: [
+            "Sistema de ar-condicionado Split",
+            "Sistema de climatização Multisplit",
+            "Sistema de ar-condicionado VRV/VRF",
+        ]
+    },
+    { 
+        icon: Sparkles, 
+        title: "Higienização e Limpeza", 
+        description: "Qualidade do ar e eficiência garantidas.",
+        items: [
+            "Limpeza completa de filtros e serpentinas",
+            "Higienização contra ácaros e bactérias",
+            "Melhora na qualidade do ar interno",
+        ]
+    },
+    { 
+        icon: Wrench, 
+        title: "Reparo e Manutenção", 
+        description: "Manutenção preventiva e corretiva.",
+        items: [
+            "Contrato de manutenção preventiva (PMOC)",
+            "Reparos emergenciais e agendados",
+            "Técnicos qualificados para diagnósticos",
+        ]
+    },
+    { 
+        icon: Building2, 
+        title: "Projetos e Infraestrutura", 
+        description: "Soluções completas e personalizadas.",
+        items: [
+            "Projeto de climatização personalizado",
+            "Sistemas de Exaustão e Renovação de Ar",
+            "Laudos e Anotação de Responsabilidade Técnica (ART)",
+        ]
+    },
+];
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,54 +91,32 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <div className={animationClass('delay-200')}>
-            <Card className="bg-background/20 backdrop-blur-sm border-white/20 text-foreground h-full flex flex-col transform hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300">
-              <CardHeader className="flex-row items-center gap-4">
-                <div className="bg-accent/20 text-accent p-3 rounded-lg">
-                  <AirVent className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 as="h3">Serviços de Climatização</h3>
-                  <p className="text-muted-foreground text-base">Instalação, limpeza e manutenção</p>
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3 mt-4">
-                  {services.climatizacao.map((service, index) => (
-                    <li key={index} className="flex items-start">
-                      <Check className="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" />
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className={animationClass('delay-400')}>
-            <Card className="bg-background/20 backdrop-blur-sm border-white/20 text-foreground h-full flex flex-col transform hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300">
-              <CardHeader className="flex-row items-center gap-4">
-                <div className="bg-accent/20 text-accent p-3 rounded-lg">
-                  <Building2 className="w-8 h-8" />
-                </div>
-                <div>
-                  <h3 as="h3">Projetos e Infraestrutura</h3>
-                  <p className="text-muted-foreground text-base">Soluções completas e personalizadas</p>
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-3 mt-4">
-                  {services.projetos.map((service, index) => (
-                    <li key={index} className="flex items-start">
-                      <Check className="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" />
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+          {services.map((service, index) => (
+            <div key={index} className={animationClass(`delay-${200 * (index + 1)}`)}>
+              <Card className="bg-background/20 backdrop-blur-sm border-white/20 text-foreground h-full flex flex-col transform hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300">
+                <CardHeader className="flex-row items-center gap-4">
+                  <div className="bg-accent/20 text-accent p-3 rounded-lg">
+                    <service.icon className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 as="h3">{service.title}</h3>
+                    <p className="text-muted-foreground text-sm">{service.description}</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <ul className="space-y-3 mt-4">
+                    {service.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <Check className="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
         </div>
 
         <div className={`text-center mt-16 ${animationClass('delay-600')}`}>

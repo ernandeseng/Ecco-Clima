@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Sobre", href: "#about" },
   { name: "Climatização", href: "#services" },
   { name: "Equipamentos", href: "#services" },
-  { name: "Clientes", href: "#clients" },
   { name: "Contato", href: "#contact" },
 ];
 
