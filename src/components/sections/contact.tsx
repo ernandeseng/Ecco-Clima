@@ -42,18 +42,18 @@ export default function ContactSection() {
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
               <ButtonColorful label="Solicite uma visita técnica gratuita!" className="text-sm px-4 sm:px-8"/>
-              <div className="flex items-center justify-center gap-4 text-small">
-                <Phone className="w-6 h-6 text-accent"/>
+              <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
+                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
                 <div>
                   <a href="tel:1126408455" className="hover:underline font-body">(11) 2640-8455</a> | <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer" className="hover:underline font-body">(11) 97684-4276</a>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-4 text-small">
-                <Mail className="w-6 h-6 text-accent"/>
+              <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
                 <a href="mailto:contato@eccoclima.com" className="hover:underline font-body">contato@eccoclima.com</a>
               </div>
-               <div className="flex items-center justify-center gap-4 text-small">
-                <MapPin className="w-6 h-6 text-accent"/>
+               <div className="flex items-center justify-center gap-4 text-xs sm:text-small">
+                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-accent"/>
                 <span className="font-body">São Paulo e Interior</span>
               </div>
             </div>
