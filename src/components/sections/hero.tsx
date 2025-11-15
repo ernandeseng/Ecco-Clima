@@ -53,7 +53,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4 mt-20">
         <div
           className={`transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
