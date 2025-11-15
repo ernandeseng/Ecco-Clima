@@ -19,7 +19,7 @@ export default function ClientsSection() {
   return (
     <section id="clients" className="bg-background">
        <AnimatedCarousel 
-        title="Nossos Clientes"
+        title="Marcas que Trabalhamos"
         logos={[...clientLogos, ...clientLogos]} // Duplicate for a smoother loop
         autoPlay={true}
         autoPlayInterval={2500}
