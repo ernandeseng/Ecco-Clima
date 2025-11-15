@@ -1,7 +1,7 @@
 "use client";
 
-import { AnimatedCarousel } from "@/components/ui/logo-carousel";
 import Image from "next/image";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
 const clientLogos = [
   { src: "https://i.imgur.com/ur5LCr6.png", alt: "Springer" },
@@ -17,32 +17,27 @@ const clientLogos = [
 ];
 
 export default function ClientsSection() {
-  const logoComponents = clientLogos.map((logo, index) => (
-    <Image
-      key={index}
-      src={logo.src}
-      alt={logo.alt}
-      width={128}
-      height={64}
-      className="object-contain h-10 w-auto"
-    />
-  ));
-  
   return (
-    <section id="clients" className="bg-background">
-       <AnimatedCarousel 
-        title="Marcas que Trabalhamos"
-        logos={[...logoComponents, ...logoComponents]}
-        autoPlay={true}
-        autoPlayInterval={2500}
-        itemsPerViewMobile={2}
-        itemsPerViewDesktop={5}
-        logoContainerWidth="w-full"
-        logoContainerHeight="h-24"
-        padding="py-20 md:py-28"
-        spacing="gap-16"
-        titleClassName="text-center !max-w-full !ml-0 mb-2"
-       />
+    <section id="clients" className="bg-white py-20 md:py-28">
+      <div className="container mx-auto">
+        <h2 className="text-center text-foreground mb-12">Marcas que Trabalhamos</h2>
+        <InfiniteSlider
+          gap={80}
+          duration={30}
+          className="w-full"
+        >
+          {clientLogos.map((logo, index) => (
+            <Image
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              width={128}
+              height={40}
+              className="object-contain h-10 w-auto"
+            />
+          ))}
+        </InfiniteSlider>
+      </div>
     </section>
   );
 }
