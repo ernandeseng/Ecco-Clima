@@ -20,7 +20,7 @@ export default function ClientsSection() {
   return (
     <section id="clients" className="bg-white py-20 md:py-28">
       <div className="container mx-auto">
-        <h2 className="text-center text-foreground mb-12">Marcas que Trabalhamos</h2>
+        <h2 className="text-center text-black mb-12">Marcas que Trabalhamos</h2>
         <InfiniteSlider
           gap={80}
           duration={30}
