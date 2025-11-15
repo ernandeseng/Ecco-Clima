@@ -41,7 +41,7 @@ export default function ContactSection() {
               Somos uma empresa que zela pela segurança e qualidade, do orçamento ao pós-venda. Cuide do seu ambiente com quem sabe cuidar da climatização de ponta a ponta.
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
-              <ButtonColorful label="Solicite uma visita técnica gratuita!" />
+              <ButtonColorful label="Solicite uma visita técnica gratuita!" className="text-sm px-4 sm:px-8"/>
               <div className="flex items-center justify-center gap-4 text-small">
                 <Phone className="w-6 h-6 text-accent"/>
                 <div>
