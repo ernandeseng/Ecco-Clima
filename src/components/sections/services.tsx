@@ -2,11 +2,20 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { AirVent, Building2, Check, Phone, Wrench, Sparkles } from "lucide-react";
-import Link from 'next/link';
+import { AirVent, Building2, Check, Wrench, Sparkles } from "lucide-react";
 import { ButtonColorful } from '../ui/button-colorful';
 
 const services = [
+    { 
+        icon: Building2, 
+        title: "Serviços de climatização", 
+        description: "Soluções completas e personalizadas.",
+        items: [
+            "Projeto de climatização personalizado",
+            "Sistemas de Exaustão e Renovação de Ar",
+            "Laudos e Anotação de Responsabilidade Técnica (ART)",
+        ]
+    },
     { 
         icon: AirVent, 
         title: "Instalação de Ar Condicionado", 
@@ -29,22 +38,12 @@ const services = [
     },
     { 
         icon: Wrench, 
-        title: "Reparo e Manutenção", 
+        title: "Reparo (Corretivo e Preventivo)", 
         description: "Manutenção preventiva e corretiva.",
         items: [
             "Contrato de manutenção preventiva (PMOC)",
             "Reparos emergenciais e agendados",
             "Técnicos qualificados para diagnósticos",
-        ]
-    },
-    { 
-        icon: Building2, 
-        title: "Projetos e Infraestrutura", 
-        description: "Soluções completas e personalizadas.",
-        items: [
-            "Projeto de climatização personalizado",
-            "Sistemas de Exaustão e Renovação de Ar",
-            "Laudos e Anotação de Responsabilidade Técnica (ART)",
         ]
     },
 ];
@@ -100,7 +99,7 @@ export default function ServicesSection() {
                     <service.icon className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 as="h3">{service.title}</h3>
+                    <CardTitle as="h3">{service.title}</CardTitle>
                     <p className="text-muted-foreground text-sm">{service.description}</p>
                   </div>
                 </CardHeader>
