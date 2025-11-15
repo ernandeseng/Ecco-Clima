@@ -8,6 +8,8 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ButtonColorful } from "../ui/button-colorful";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Sobre", href: "#about" },
@@ -19,6 +21,8 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +41,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center text-2xl font-bold text-foreground">
-            
+             {logoImage && <Image src={logoImage.imageUrl} alt={logoImage.description} width={100} height={100} className="h-auto w-24" data-ai-hint={logoImage.imageHint} />}
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
@@ -64,8 +68,8 @@ export default function Header() {
               <SheetContent side="right" className="bg-background w-full">
                 <div className="flex flex-col h-full p-4">
                   <div className="flex justify-between items-center mb-8">
-                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-foreground">
-                      
+                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center text-2xl font-bold text-foreground">
+                       {logoImage && <Image src={logoImage.imageUrl} alt={logoImage.description} width={100} height={100} className="h-auto w-24" data-ai-hint={logoImage.imageHint} />}
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                       <X className="h-6 w-6" />
