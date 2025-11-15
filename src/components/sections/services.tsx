@@ -2,9 +2,9 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { AirVent, Building2, Check, Phone } from "lucide-react";
 import Link from 'next/link';
+import { ButtonColorful } from '../ui/button-colorful';
 
 const services = {
   climatizacao: [
@@ -116,12 +116,7 @@ export default function ServicesSection() {
         </div>
 
         <div className={`text-center mt-16 ${animationClass('delay-600')}`}>
-          <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
-            <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
-              <Phone className="mr-2 h-5 w-5" />
-              Solicite um Orçamento
-            </a>
-          </Button>
+          <ButtonColorful label="Solicite um Orçamento" />
         </div>
       </div>
     </section>

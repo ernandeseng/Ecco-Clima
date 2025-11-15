@@ -1,9 +1,8 @@
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { ButtonColorful } from '../ui/button-colorful';
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -42,14 +41,7 @@ export default function ContactSection() {
               Somos uma empresa que zela pela segurança e qualidade, do orçamento ao pós-venda. Cuide do seu ambiente com quem sabe cuidar da climatização de ponta a ponta.
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
-              <div className="text-xl font-semibold bg-accent text-accent-foreground p-4 rounded-lg">
-                <Button asChild variant="accent" size="lg" className="w-full hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
-                  <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Solicite uma visita técnica gratuita!
-                  </a>
-                </Button>
-              </div>
+              <ButtonColorful label="Solicite uma visita técnica gratuita!" />
               <div className="flex items-center justify-center gap-4 text-small">
                 <Phone className="w-6 h-6 text-accent"/>
                 <div>

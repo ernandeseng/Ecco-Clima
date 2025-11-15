@@ -3,8 +3,8 @@
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2, Phone } from 'lucide-react';
-import { Button } from '../ui/button';
+import { CheckCircle2 } from 'lucide-react';
+import { ButtonColorful } from '../ui/button-colorful';
 
 const benefits = [
   "Alta qualidade da visita técnica",
@@ -68,12 +68,7 @@ export default function BenefitsSection() {
               ))}
             </ul>
             <div className={`mt-10 ${animationClass('delay-200')}`}>
-                <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform font-headline font-semibold tracking-[0.5px] uppercase">
-                  <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Fale com um especialista
-                  </a>
-                </Button>
+                <ButtonColorful label="Fale com um especialista" />
             </div>
           </div>
           <div className={`${animationClass('delay-200')} hidden md:block`}>

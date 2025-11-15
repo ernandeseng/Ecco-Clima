@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ButtonColorful } from '../ui/button-colorful';
 
 export default function HeroSection() {
   const [offsetY, setOffsetY] = useState(0);
@@ -79,9 +78,9 @@ export default function HeroSection() {
           <p className="mt-6 max-w-xl mx-auto">
             Conheça nossos serviços de climatização em São Paulo e interior.
           </p>
-          <Button asChild size="lg" variant="accent" className="mt-8 animate-pulse font-headline font-semibold tracking-[0.5px] uppercase">
-            <Link href="#contact">AGENDAR VISITA TÉCNICA</Link>
-          </Button>
+          <div className="mt-8">
+            <ButtonColorful label="AGENDAR VISITA TÉCNICA" />
+          </div>
         </div>
       </div>
     </section>

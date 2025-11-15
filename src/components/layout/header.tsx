@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ButtonColorful } from "../ui/button-colorful";
 
 const navLinks = [
   { name: "Sobre", href: "#about" },
@@ -51,9 +52,7 @@ export default function Header() {
                 <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
-            <Button asChild variant="accent" size="sm" className="font-headline font-semibold tracking-[0.5px] uppercase">
-              <Link href="#contact">Agendar Visita</Link>
-            </Button>
+            <ButtonColorful label="Agendar Visita" className="h-9 px-4 py-2 text-sm" />
           </nav>
 
           <div className="md:hidden">
@@ -85,9 +84,9 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
-                  <Button asChild variant="accent" className="mt-8 w-full font-headline font-semibold tracking-[0.5px] uppercase" size="lg">
-                    <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Agendar Visita</Link>
-                  </Button>
+                  <div className="mt-8 w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                    <ButtonColorful label="Agendar Visita" className="w-full" />
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
