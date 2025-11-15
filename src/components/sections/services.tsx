@@ -3,7 +3,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AirVent, Building2, Check } from "lucide-react";
+import { AirVent, Building2, Check, Phone } from "lucide-react";
+import Link from 'next/link';
 
 const services = {
   climatizacao: [
@@ -86,9 +87,6 @@ export default function ServicesSection() {
                   ))}
                 </ul>
               </CardContent>
-              <div className="p-6 pt-0">
-                <Button variant="accent" className="w-full">SAIBA MAIS</Button>
-              </div>
             </Card>
           </div>
           
@@ -113,11 +111,17 @@ export default function ServicesSection() {
                   ))}
                 </ul>
               </CardContent>
-              <div className="p-6 pt-0">
-                <Button variant="accent" className="w-full">SAIBA MAIS</Button>
-              </div>
             </Card>
           </div>
+        </div>
+
+        <div className={`text-center mt-16 ${animationClass('delay-600')}`}>
+          <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform">
+            <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
+              <Phone className="mr-2 h-5 w-5" />
+              Solicite um Orçamento
+            </a>
+          </Button>
         </div>
       </div>
     </section>

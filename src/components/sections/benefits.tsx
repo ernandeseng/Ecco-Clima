@@ -3,7 +3,8 @@
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Phone } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const benefits = [
   "Alta qualidade da visita técnica",
@@ -61,11 +62,19 @@ export default function BenefitsSection() {
             <ul className="mt-8 space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700">{benefit}</span>
                 </li>
               ))}
             </ul>
+            <div className={`mt-10 ${animationClass('delay-200')}`}>
+                <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform">
+                  <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Fale com um especialista
+                  </a>
+                </Button>
+            </div>
           </div>
           <div className={`${animationClass('delay-200')} hidden md:block`}>
             {benefitsImage && (

@@ -1,45 +1,14 @@
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin } from 'lucide-react';
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "O nome deve ter pelo menos 2 caracteres." }),
-  email: z.string().email({ message: "Por favor, insira um email válido." }),
-  message: z.string().min(10, { message: "A mensagem deve ter pelo menos 10 caracteres." }),
-});
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { toast } = useToast();
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Mensagem Enviada!",
-      description: "Obrigado por entrar em contato. Retornaremos em breve.",
-    });
-    form.reset();
-  }
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -73,9 +42,14 @@ export default function ContactSection() {
               Somos uma empresa que zela pela segurança e qualidade, do orçamento ao pós-venda. Cuide do seu ambiente com quem sabe cuidar da climatização de ponta a ponta.
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
-              <p className="text-xl font-semibold bg-accent text-accent-foreground p-4 rounded-lg">
-                Solicite uma visita técnica gratuita!
-              </p>
+              <div className="text-xl font-semibold bg-accent text-accent-foreground p-4 rounded-lg">
+                <Button asChild variant="accent" size="lg" className="w-full hover:scale-105 transition-transform">
+                  <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Solicite uma visita técnica gratuita!
+                  </a>
+                </Button>
+              </div>
               <div className="flex items-center justify-center gap-4">
                 <Phone className="w-6 h-6 text-accent"/>
                 <div>
