@@ -11,6 +11,12 @@
       "description": "Happy family enjoying their air conditioned living room.",
       "imageUrl": "https://i.imgur.com/4MGTkaG.png",
       "imageHint": "family air conditioner"
+    },
+    {
+      "id": "logo",
+      "description": "Ecco Clima company logo",
+      "imageUrl": "https://i.imgur.com/4PCGe4W.png",
+      "imageHint": "company logo"
     }
   ]
 }

@@ -12,6 +12,7 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
 
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
+  const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,12 +54,22 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4 mt-40">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
         <div
           className={`transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
+          {logoImage && (
+            <Image 
+              src={logoImage.imageUrl}
+              alt={logoImage.description}
+              width={200}
+              height={200}
+              className="mx-auto mb-4"
+              data-ai-hint={logoImage.imageHint}
+            />
+          )}
           <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter">
             Ecco Clima
           </h1>
