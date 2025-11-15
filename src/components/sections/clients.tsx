@@ -1,8 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from 'react';
-import { Button } from '../ui/button';
-import { Phone } from 'lucide-react';
 
 const clientLogos = [
   "Empresa Alfa",
@@ -66,14 +64,6 @@ export default function ClientsSection() {
               </div>
             </div>
           ))}
-        </div>
-        <div className={`text-center mt-16 ${animationClass}`}>
-          <Button asChild variant="accent" size="lg" className="hover:scale-105 transition-transform">
-            <a href="https://wa.me/5511976844276" target="_blank" rel="noopener noreferrer">
-              <Phone className="mr-2 h-5 w-5" />
-              Seja nosso parceiro
-            </a>
-          </Button>
         </div>
       </div>
     </section>
