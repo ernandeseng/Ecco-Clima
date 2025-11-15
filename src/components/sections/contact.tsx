@@ -31,13 +31,13 @@ export default function ContactSection() {
     }`;
   
   return (
-    <section id="contact" ref={sectionRef} className="py-20 md:py-28 bg-primary text-primary-foreground relative overflow-hidden">
+    <section id="contact" ref={sectionRef} className="py-10 md:py-28 bg-primary text-primary-foreground relative overflow-hidden px-4">
       <div className="absolute inset-0 bg-gradient-to-tr from-primary via-blue-700 to-primary opacity-50"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-1 gap-12 lg:gap-16 items-center">
+      <div className="container mx-auto px-0 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-1 gap-8 lg:gap-12 items-center">
           <div className={`${animationClass('delay-0')} text-center`}>
-            <h2>Contato da Ecco Clima</h2>
-            <p className="mt-4 text-primary-foreground/80 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-[42px]">Contato da Ecco Clima</h2>
+            <p className="mt-4 text-primary-foreground/80 max-w-3xl mx-auto text-base md:text-lg px-6 md:px-0">
               Somos uma empresa que zela pela segurança e qualidade, do orçamento ao pós-venda. Cuide do seu ambiente com quem sabe cuidar da climatização de ponta a ponta.
             </p>
             <div className="mt-8 space-y-4 max-w-md mx-auto">
