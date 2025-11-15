@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ButtonColorful } from "../ui/button-colorful";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { cn } from "@/lib/utils";
@@ -19,24 +18,16 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const logoImage = PlaceHolderImages.find(p => p.id === 'logo');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <header
       className={cn(
-        "absolute top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-lg shadow-md" : "bg-transparent"
+        "absolute top-0 left-0 right-0 z-50 bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,6 +36,7 @@ export default function Header() {
              {logoImage && <Image src={logoImage.imageUrl} alt={logoImage.description} width={100} height={100} className="h-auto w-24" data-ai-hint={logoImage.imageHint} />}
           </Link>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
@@ -59,42 +51,52 @@ export default function Header() {
             <ButtonColorful label="Agendar Visita" className="h-9 px-4 py-2 text-sm" />
           </nav>
 
-          <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-background w-full">
-                <div className="flex flex-col h-full p-4">
-                  <div className="flex justify-between items-center mb-8">
-                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center text-2xl font-bold text-foreground">
-                       {logoImage && <Image src={logoImage.imageUrl} alt={logoImage.description} width={100} height={100} className="h-auto w-24" data-ai-hint={logoImage.imageHint} />}
+          {/* Mobile Nav */}
+           <nav className="flex md:hidden items-center space-x-2 sm:space-x-4">
+             {navLinks.slice(0, 2).map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-xs sm:text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group font-body"
+                onClick={closeMenu}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden"
+              >
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Abrir menu</span>
+            </Button>
+          </nav>
+
+          {isMobileMenuOpen && (
+              <div 
+                className="absolute top-20 left-0 right-0 md:hidden bg-background/95 backdrop-blur-sm shadow-lg rounded-b-lg p-4"
+                >
+              <div className="container mx-auto">
+                <nav className="flex flex-col space-y-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors py-2 text-center"
+                      onClick={closeMenu}
+                    >
+                      {link.name}
                     </Link>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                      <X className="h-6 w-6" />
-                    </Button>
+                  ))}
+                  <div className="pt-4 border-t border-border/20">
+                     <ButtonColorful label="Agendar Visita" className="w-full" onClick={closeMenu} />
                   </div>
-                  <nav className="flex flex-col space-y-6 text-center">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors font-body"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </nav>
-                  <div className="mt-8 w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                    <ButtonColorful label="Agendar Visita" className="w-full" />
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+                </nav>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </header>
