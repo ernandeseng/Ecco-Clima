@@ -25,10 +25,6 @@ export const AnimatedCarousel = ({
   padding = "py-20 lg:py-40",
   logoContainerWidth = "w-48",
   logoContainerHeight = "h-24",
-  logoImageWidth = "w-full",
-  logoImageHeight = "h-full",
-  logoMaxWidth = "",
-  logoMaxHeight = "",
 }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -51,9 +47,7 @@ export const AnimatedCarousel = ({
     return () => clearTimeout(timer);
   }, [api, current, autoPlay, autoPlayInterval]);
 
-  const logoItems = logos || Array.from({ length: logoCount }, (_, i) => `https://th.bing.com/th/id/R.4aa108082e7d3cbd55add79f84612aaa?rik=I4dbPhSe%2fbHHSg&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-google-logo-2015brandlogobrand-logoiconssymbolslogosgoogle-6815229372333mqrr.png&ehk=ewmaCOvP0Ji4QViEJnxSdlrYUrTSTWhi8nZ9XdyCgAI%3d&risl=&pid=ImgRaw&r=0100x100?text=Logo+${i + 1}`);
-
-  const logoImageSizeClasses = `${logoImageWidth} ${logoImageHeight} ${logoMaxWidth} ${logoMaxHeight}`.trim();
+  const logoItems = logos || Array.from({ length: logoCount }, (_, i) => `Logo ${i + 1}`);
 
   return (
     <div className={`w-full ${padding} bg-background ${containerClassName}`}>
