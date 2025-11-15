@@ -72,7 +72,7 @@ export default function BenefitsSection() {
               <Image
                 src={benefitsImage.imageUrl}
                 alt={benefitsImage.description}
-                width={800}
+                width={600}
                 height={600}
                 className="rounded-lg shadow-2xl object-cover"
                 data-ai-hint={benefitsImage.imageHint}
