@@ -78,7 +78,7 @@ export default function HeroSection() {
             <motion.div className="font-headline font-semibold text-2xl md:text-3xl text-primary mt-4 flex items-center justify-center gap-2" layout>
               <span>Sua solução em</span>
               <TextRotate
-                texts={["Climatização", "Refrigeração", "Conforto"]}
+                texts={["Climatização", "Conforto"]}
                 mainClassName="text-white px-2 sm:px-3 bg-accent/80 overflow-hidden py-0.5 sm:py-1 justify-center rounded-lg"
                 staggerFrom={"first"}
                 initial={{ y: "100%" }}
